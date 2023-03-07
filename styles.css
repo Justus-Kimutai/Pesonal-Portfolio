@@ -105,7 +105,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 90%;
+    height: 80%;
 }
 
 .nav-toggle__btn{
@@ -132,7 +132,6 @@ header{
 .nav__item{
     opacity: 0;
     margin-top: 3em;
-    font-weight: var(--fw-nav);
 }
 
 .nav__link:hover{
@@ -357,7 +356,7 @@ section{
    
     .nav__link{
         color: #16e0bd;
-        font-weight: var(--fw-reg);
+        font-weight: var(--fw-nav);
     }
 
     .logo{
