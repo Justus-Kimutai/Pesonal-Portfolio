@@ -16,6 +16,7 @@ html{
     --fw-reg: 300;
     --fw-bold: 900;
     --fw-link: 600;
+    --fw-nav: 400;
 
    --clr-light:#fff;
    --clr-dark:#303030;
@@ -131,6 +132,7 @@ header{
 .nav__item{
     opacity: 0;
     margin-top: 3em;
+    font-weight: var(--fw-nav);
 }
 
 .nav__link:hover{
