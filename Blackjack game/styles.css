@@ -83,3 +83,10 @@ p{
 .toggle-guide{
     display: block;
 }
+#span-div{
+    display: block;
+    text-align: right;
+    font-size: smaller;
+    color: #c4c4c4d2;
+
+}
