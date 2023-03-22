@@ -379,7 +379,7 @@ section{
     }
 }
 .my-services{
-    background: var(--clr-accent);
+    background: var(--clr-dark);
     color: var(--clr-light);
     background-image: url(images/services-bg.jpg);
     background-size: cover;
