@@ -255,6 +255,9 @@ section{
 .section__text--my-work{
     font-size: h3;
 }
+.section__text--my-work a{
+    color: #16e0bd;
+}
 
 .intro{
     position: relative;
