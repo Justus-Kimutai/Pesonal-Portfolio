@@ -418,13 +418,12 @@ section{
     display: flex;
     gap: 20px;
     flex-direction: column;
-    
+    margin-bottom: 20px;
 }
 
-.portfolio img{
-    max-width: 100%;
+.portfolio div:hover img{
+    transform: scale(.99);
 }
-
 .my-work{
     text-align: center;
     background: var(--clr-dark);
@@ -432,9 +431,13 @@ section{
 }
 
 .span__link{
-    text-decoration: underline;
+    text-decoration:none;
     color: var(--clr-accent);
     font-weight: var(--fw-link);
+}
+.span__link:hover{
+    opacity: .5;
+    text-decoration: underline;
 }
 .portfolio:focus{
     outline: none;
@@ -475,6 +478,12 @@ section{
 }
 .footer__link{
     padding: .5em;
+}
+
+.contacts-link{
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
 }
 
 @media(min-width:655px){
@@ -522,7 +531,7 @@ section{
         align-items: center;
         justify-content: center;
 
-        margin:  0 auto;
+        margin:  20px auto;
         width: 80%;
     }
     .portfolio div{
