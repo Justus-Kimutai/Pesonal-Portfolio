@@ -1,5 +1,5 @@
 let textDiv = document.querySelector('.text')
-const stringText = 'Hello There, kimutai here wishing you a fruitful month full of Gods grace and favour, may all that the enemy has crafted and intended to harm you work for your good in this september in Jesus name. Good night😉   #stay Motivated'
+const stringText = 'Lord You promised not to put me to shame, and indeed you are not a man to Lie, you have not ashemed me. Thank you God. Give me strength to always serve you all the days of my Life. '
 
 const arrString = stringText.split("")
 
