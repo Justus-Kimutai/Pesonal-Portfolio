@@ -2,10 +2,16 @@ body{
     background: black;
     color: rgb(235, 212, 0);
 }
+img{
+    max-width: 100%;
+}
 .container{
     margin: 0 auto;
     width: 80%;
 }
 .text{
-    font-size: 2em;
+    font-size: 1.5em;
+}
+.img{
+    visibility: hidden;
 }
