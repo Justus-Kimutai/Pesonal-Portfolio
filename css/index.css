@@ -485,9 +485,7 @@ section{
     margin-top: -30px;
     margin-bottom: 30px;
 }
-.resume{
-    
-}
+
 @media(min-width:655px){
     .call-to-action{
         flex-direction: row;
