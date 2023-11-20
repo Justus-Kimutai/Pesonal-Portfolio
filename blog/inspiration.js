@@ -1,7 +1,10 @@
 let textDiv = document.querySelector('.text')
-let img = document.querySelector('.img')
 
-const stringText = 'A Story is told of two men, Who were praying in a mountain. One was a millionaire praying for a breakthrough in a cetain contract. One was a poor guy crying for food to give his Children. The millionare Heard the poor guys graonings, He gave Him 1000 dollars. The poor guy went home with his answered prayer and sure enough God also opened a way for this millionare. You are a millonare today because God has given you a great health. There is a patient lying on the sick bed, some loosing hope of this life. Join us in prayer as we go and encourage them, pray for them and give them milk and Fruits. An God shall remmember the cries of your heart. '
+const stringText = `NEHEMIAH CHAPTER 9 
+After the walls of Jerusalem were rebuilt, the Israelites spent half of the day confessing and worshiping the Lord. 
+They started telling the history of where God had brought them. The clear insight from this Chapter is how God was very compassionate to them, from the time they came from Egypt to cannan. They were full of bitterness and anger despite God providing for them everything, but God held His anger from them. Despite God handing them to the hands of their enemies in the Promised Land, He still couldn’t allow them to be finished. 
+God is very compassionate, even if we sink into the deep mud of sin or get lost in the unending black hole of sin when we turn our face towards Him. He comes running towards us. 
+`
 
 const arrString = stringText.split("")
 
@@ -14,6 +17,5 @@ let timeOut = setInterval(() => {
 
     if(index === arrString.length){
         clearInterval(timeOut)
-        img.style.visibility = 'visible'
     }
 }, 100);
