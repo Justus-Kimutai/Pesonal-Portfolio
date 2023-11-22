@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nehemiah eleven and twelve</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <style>
+            body{
+        background: black;
+        color: rgb(235, 212, 0);
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <p class="text"></p>
+        </div>
+    </header>
+    
+    <script >
+        let textDiv = document.querySelector('.text')
+
+        const stringText = `
+        Nehemiah 11&12 
+        The wall of Jerusalem dedicated. After a success in restoring the wall of Jerusalem, The Israelites gave thanks to the Lord, Nehemiah assigned two choir to sing and play the instruments as they walk around the wall in celebration.
+        I heard an Apostle one day speaking about Thanksgiving, he said in Heaven, God receives prayer requests from every corner of the world. One person cries for money, another complains God why? Another one says why me Lord? Some cry and say why did you create me like this Lord? Some requests for favor and many more cries, complains and requests, because of this, God now wonders about our cries and complains so He decides to put up His gate and anyone who wants access, must use the password. Everyone who wants the attention of God must use the password to enter in. The password is thanksgiving. Probably you’re saying now. Kim I have nothing to be grateful for. Hey did you wake up today, use it as your password. Are you healthy use it as your password? Can you think well and give a sound Judgment? Can you read and write? The fact that you are reading this article now is another password. Come one I can give you 100 items to be grateful for and I don’t even know you. Use them as your password to get God’s attention and He shall hear and answer the cries of your heart. 
+        Blessed Day. Shalom 
+        @Captain Kimutai.
+
+        `
+        const arrString = stringText.split("")
+
+        let index = 0
+
+        let timeOut = setInterval(() => {
+            textDiv.textContent += arrString[index]
+            index++
+
+            if(index === arrString.length){
+                clearInterval(timeOut)
+            }
+        }, 100);
+
+    </script>
+</body>
+
+</html> 
