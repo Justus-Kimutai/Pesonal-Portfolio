@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nehemiah Chapter thirteen</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <style>
+            body{
+        background: black;
+        color: rgb(235, 212, 0);
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h2 class="header"></h2>
+            <p class="text"></p>
+            <p class="footer"></p>
+        </div>
+    </header>
+    
+    <script >
+        let titleDiv = document.querySelector('.header')
+        let textDiv = document.querySelector('.text')
+        let footerDiv = document.querySelector('.footer')
+
+        const headerText = `NEHEMIAH 13: IT TAKES ONE MAN.`
+        const bodyText = ` After Nehemiah had done with the wall and all thanksgiving, He went back to be the King’s Cup bearer, after a while he asked permission and came back to Jerusalem. He found men lost in sin and doing contrary to God’s will. What He had built with the help of God was slowly being destroyed by the wicked men. They intermarried with foreigners, they traded on Sabbath day among others. They aroused God’s anger. On arrival he turned the tables around and removed every sin without mercy, he had to throw some men outside the wall and punish others by cursing them and pulling their hair. He blotted out sin among them and restored the relationship between them and God. God hates sin and so should we passionately, when we stay in accordance to his decrees, He shall remember us and bless us.`
+        const footerText = `Have a fruitful day. Shallom.`
+
+       
+
+        timer(headerText, titleDiv, () => {
+            // After header is done, display body
+            timer(bodyText, textDiv, () => {
+                // After body is done, display footer
+                timer(footerText, footerDiv);
+            });
+        });
+
+        
+        function timer(text,container,callback){
+            const arr = text.split("")
+
+            let index = 0
+
+            let timeOut = setInterval(() => {
+            container.textContent += arr[index]
+            index++
+
+                if(index === arr.length){
+                    clearInterval(timeOut)
+                    // Call the callback function if provided
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 100);
+
+        }
+
+    </script>
+</body>
+
+</html> 
