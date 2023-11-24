@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther 1</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        body{
+        background: black;
+        color: rgb(235, 212, 0);
+        font-family: 'Roboto', sans-serif;
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+        @media(max-width:500px){
+            .text{
+                font-weight: 300;
+                font-size: 1.2em;
+            }
+            .footer{
+                font-size: 1.1em;
+                font-weight: 100;
+            }
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h2 class="header"></h2>
+            <p class="text"></p>
+            <p class="footer"></p>
+        </div>
+    </header>
+    
+    <script >
+        let titleDiv = document.querySelector('.header')
+        let textDiv = document.querySelector('.text')
+        let footerDiv = document.querySelector('.footer')
+
+        const headerText = `Esther 1: The fall of Vashti`
+        const bodyText = ` In King Xerxes reign, a time came where he displayed the vast wealth his kingdom, the splendor and the glory of his majesty for a whopping 6 months. You can imagine the wealth this King had accumulated. After that he threw a party for the whole 127 districts he ruled for 7 days. He got drunk and while in high spirits, he called for Queen Vashti to come and display her beauty but she refused. This made the King burn with anger, he seeked for advice and Vashti was thrown out of the Kingdom. Okay where the catch? Look at Vashti, the honorable woman, very wealthy through the king, she had everything she desired but because of arrogance, she was thrown out. Hey wait don’t leave yet here the interesting part, in verse 9 the bible says She also gave a banquet for the women in the palace, so this means she was enjoying her party with the ladies and neglected the Kings orders. Remember every power and wealth Vashti had was from the King, but she was blotted out. I’m comparing this with us and God. Come on now, how many times have we neglected God’s voice because His blessings are keeping us busy, some of us we cried a lot, when God came we have forgotten where we were brought from. Which graces has God entrusted you, can you sing? Can you play an instrument, can you encourage? Can you evangelize? Let’s work on the gifts He has given us in obedience. `
+        const footerText = `Shalom. Blessed day. `
+
+       
+
+        timer(headerText, titleDiv, () => {
+            // After header is done, display body
+            timer(bodyText, textDiv, () => {
+                // After body is done, display footer
+                timer(footerText, footerDiv);
+            });
+        });
+
+        
+        function timer(text,container,callback){
+            const arr = text.split("")
+
+            let index = 0
+
+            let timeOut = setInterval(() => {
+            container.textContent += arr[index]
+            index++
+
+                if(index === arr.length){
+                    clearInterval(timeOut)
+                    // Call the callback function if provided
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 100);
+
+        }
+
+    </script>
+</body>
+
+</html> 
