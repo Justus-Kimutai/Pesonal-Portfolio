@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther 4</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        body{
+        background: black;
+        color: rgb(235, 212, 0);
+        font-family: 'Roboto', sans-serif;
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+        @media(max-width:500px){
+            .text{
+                font-weight: 300;
+                font-size: 1.2em;
+            }
+            .footer{
+                font-size: 1.1em;
+                font-weight: 100;
+            }
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h2 class="header"></h2>
+            <p class="text"></p>
+            <p class="footer"></p>
+        </div>
+    </header>
+    
+    <script >
+        let titleDiv = document.querySelector('.header')
+        let textDiv = document.querySelector('.text')
+        let footerDiv = document.querySelector('.footer')
+
+        const headerText = `Esther 4: As such a time as this`
+        const bodyText = `Letters for Jews extinction were published all through the provinces through Haman, Mordecai wore sack clothes and wailed all through the streets in town. There was a great mourning among the Jews, weeping and wailing accompanied by fasting, many laid in sack clothes. 
+        The message reached Esther, the Queen. During those times anyone who entered the king’s inner courts without being summoned was put to death including the Queen herself. Esther tried to bargain the situation with Mordecai but he told her if she will not help them God shall provide another way but she will prepare to perish with her family. In verse 14, he says “And who knows but that you have come to your royal position for such a time as this?” Esther folded her sleeves, arranged a fast for 3 days with the Jews and She went in the inner courts. The King was pleased with her and she granted her wishes.
+        Come on now, where are as a time as this, what levels has God elevated you to? What gifts God has entrusted you with? Which graces has God given you? Use them to rescue yourself and your people.  
+        `
+        const footerText = `Shalom. Blessed sunday. `
+
+       
+
+        timer(headerText, titleDiv, () => {
+            // After header is done, display body
+            timer(bodyText, textDiv, () => {
+                // After body is done, display footer
+                timer(footerText, footerDiv);
+            });
+        });
+
+        
+        function timer(text,container,callback){
+            const arr = text.split("")
+
+            let index = 0
+
+            let timeOut = setInterval(() => {
+            container.textContent += arr[index]
+            index++
+
+                if(index === arr.length){
+                    clearInterval(timeOut)
+                    // Call the callback function if provided
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 100);
+
+        }
+
+    </script>
+</body>
+
+</html> 
