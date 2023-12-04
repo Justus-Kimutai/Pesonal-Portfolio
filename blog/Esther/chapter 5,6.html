@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther 5&6</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        body{
+        background: black;
+        color: rgb(235, 212, 0);
+        font-family: 'Roboto', sans-serif;
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+        @media(max-width:500px){
+            .text{
+                font-weight: 300;
+                font-size: 1.2em;
+            }
+            .footer{
+                font-size: 1.1em;
+                font-weight: 100;
+            }
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h2 class="header"></h2>
+            <p class="text"></p>
+            <p class="footer"></p>
+        </div>
+    </header>
+    
+    <script >
+        let titleDiv = document.querySelector('.header')
+        let textDiv = document.querySelector('.text')
+        let footerDiv = document.querySelector('.footer')
+
+        const headerText = `Esther 5&6: Mordecai Honoured.`
+        const bodyText = `Earlier in Chapter two of Esther, two of King's Officers plots to kill the King, Mordecai finds out, tells the Queen and King’s life is spared. No one recognized the act for many days but it was recorded in Heaven and one night God made the King to be restless, he couldn’t sleep, the king ordered the book of chronicles, the record of his reign to be given to him and he found out Mordecai’s act then he ordered Haman, “the Jew's enemy” to honor Mordecai by taking him round the city on Kings horse wearing royal robes. Look at God’s doing, He has turned the table around, the man who refused to bow down to Haman is now being honored by Him. Never tire to do good, even if no body appreciates or recognises be assured that Heaven records every detail and one day, The books will be opened and your reward will receive your reward.
+        `
+        const footerText = `Shalom, have a nice day.  `
+
+       
+
+        timer(headerText, titleDiv, () => {
+            // After header is done, display body
+            timer(bodyText, textDiv, () => {
+                // After body is done, display footer
+                timer(footerText, footerDiv);
+            });
+        });
+
+        
+        function timer(text,container,callback){
+            const arr = text.split("")
+
+            let index = 0
+
+            let timeOut = setInterval(() => {
+            container.textContent += arr[index]
+            index++
+
+                if(index === arr.length){
+                    clearInterval(timeOut)
+                    // Call the callback function if provided
+                    if (callback) {
+                        callback();
+                    }
+                }
+
+            },10);
+
+        }
+
+    </script>
+</body>
+
+</html> 
