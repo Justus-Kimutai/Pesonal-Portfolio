@@ -75,7 +75,7 @@ app.post("/stk", generateToken , async (req,res)=>{
             PartyA:`254${phone}`,    
             PartyB:shortcode,    
             PhoneNumber:`254${phone}`,    
-            CallBackURL: "https://kimutaijustus.xyz/mpesa_pay/index.js/callback",    
+            CallBackURL: "",    
             AccountReference:`254${phone}`,    
             TransactionDesc:"Test"
          },
@@ -93,14 +93,15 @@ app.post("/stk", generateToken , async (req,res)=>{
     });
 });
 
-app.post("/callback", (req,res)=>{
-    const callbackData = req.body;
-    console.log(callbackData.Body);
 
-    if(!callbackData.Body.stkCallback.CallbackMetadata){
-        console.log(callbackData.Body.stkCallback.CallbackMetadata);
-        return res.json("ok");
-    }
-    alert("Thank you!")
-})
+// app.post("/callback", (req,res)=>{
+//     const callbackData = req.body;
+//     console.log(callbackData.Body);
+
+//     if(!callbackData.Body.stkCallback.CallbackMetadata){
+//         console.log(callbackData.Body.stkCallback.CallbackMetadata);
+//         return res.json("ok");
+//     }
+//     alert("Thank you!")
+// })
 

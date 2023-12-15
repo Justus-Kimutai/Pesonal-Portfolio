@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STK Push Form</title>
 </head>
+
 <body>
 
     <h2>STK Push Form</h2>
@@ -26,7 +27,7 @@
 
             const data = { phone: phoneNumber, amount: amount };
 
-            fetch('index.js/stk', {
+            fetch('https://kimutaijustus.xyz/mpesa_pay/index/stk', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
