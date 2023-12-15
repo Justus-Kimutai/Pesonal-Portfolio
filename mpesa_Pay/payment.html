@@ -28,13 +28,13 @@
 
             const data = { phone: phoneNumber, amount: amount };
 
-            fetch('https://kimutaijustus.xyz/stk', {
+            fetch('https://ebenezer-8t75.onrender.com/stk', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
-            })
+            }).then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
                 // Handle success, show a success message, or redirect the user

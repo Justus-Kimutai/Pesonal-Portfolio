@@ -19,10 +19,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(cors());
 
 
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
-
 const generateToken = async (req,res,next)=>{
 
     const key = process.env.MPESA_CONSUMER_KEY;   
