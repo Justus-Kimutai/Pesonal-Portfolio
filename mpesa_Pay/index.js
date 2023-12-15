@@ -27,7 +27,7 @@ const generateToken = async (req,res,next)=>{
 
     const key = process.env.MPESA_CONSUMER_KEY;   
     const secret = process.env.MPESA_CONSUMER_SECRET;
-    
+
 
     const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
 
@@ -50,6 +50,7 @@ app.post("/stk", generateToken , async (req,res)=>{
 
     const phone = req.body.phone.substring(1);
     const amount = req.body.amount;
+    console.log(phone,amount);
 
     const date = new Date();
     const timestamp = 
@@ -91,6 +92,7 @@ app.post("/stk", generateToken , async (req,res)=>{
     }).catch((err)=>{
         console.log(err.message);
         res.status(400).json(err.message)
+        console.log("didn't go through");
     });
 
 });
