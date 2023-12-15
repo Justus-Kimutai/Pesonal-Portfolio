@@ -21,6 +21,10 @@
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
 
+    <h2>Payments</h2>
+
+    <ul id="paymentsList"></ul>
+
     <script>
 
         function submitForm() {
@@ -46,6 +50,20 @@
                 
             });
         }
+
+            // Fetch data from the server
+        fetch('https://ebenezer-8t75.onrender.com/payments')
+        .then(response => response.json())
+        .then(data => {
+            // Display data on the web page
+            const paymentsList = document.getElementById('paymentsList');
+            data.forEach(payment => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Phone: ${payment.number}, Amount: ${payment.amount}, Transaction ID: ${payment.trnx_id}`;
+            paymentsList.appendChild(listItem);
+            });
+        })
+      
 
     </script>
 
