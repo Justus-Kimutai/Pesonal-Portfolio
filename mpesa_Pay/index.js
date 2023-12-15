@@ -75,7 +75,7 @@ app.post("/stk", generateToken , async (req,res)=>{
             PartyA:`254${phone}`,    
             PartyB:shortcode,    
             PhoneNumber:`254${phone}`,    
-            CallBackURL: "./mpesa_Pay/index.js/callback",    
+            CallBackURL: "https://kimutaijustus.xyz/mpesa_pay/index.js/callback",    
             AccountReference:`254${phone}`,    
             TransactionDesc:"Test"
          },
