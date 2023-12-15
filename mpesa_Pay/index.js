@@ -19,15 +19,15 @@ app.use(express.urlencoded({extended:true}));
 app.use(cors());
 
 
-app.get("/token",(req,res)=>{
-    generateToken();
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
 });
 
 const generateToken = async (req,res,next)=>{
 
     const key = process.env.MPESA_CONSUMER_KEY;   
     const secret = process.env.MPESA_CONSUMER_SECRET;
-
+    
 
     const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
 
@@ -47,6 +47,7 @@ const generateToken = async (req,res,next)=>{
 }
 
 app.post("/stk", generateToken , async (req,res)=>{
+
     const phone = req.body.phone.substring(1);
     const amount = req.body.amount;
 
@@ -75,7 +76,7 @@ app.post("/stk", generateToken , async (req,res)=>{
             PartyA:`254${phone}`,    
             PartyB:shortcode,    
             PhoneNumber:`254${phone}`,    
-            CallBackURL: "",    
+            CallBackURL: "https://mydomain.com/pat",    
             AccountReference:`254${phone}`,    
             TransactionDesc:"Test"
          },
@@ -91,6 +92,7 @@ app.post("/stk", generateToken , async (req,res)=>{
         console.log(err.message);
         res.status(400).json(err.message)
     });
+
 });
 
 
