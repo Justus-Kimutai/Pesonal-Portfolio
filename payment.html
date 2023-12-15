@@ -52,7 +52,7 @@
         }
 
             // Fetch data from the server
-        fetch('https://ebenezer-8t75.onrender.com/payments')
+        fetch('https://ebenezer-8t75.onrender.com/payments',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             // Display data on the web page
