@@ -75,7 +75,7 @@ app.post("/stk", generateToken , async (req,res)=>{
             PartyA:`254${phone}`,    
             PartyB:shortcode,    
             PhoneNumber:`254${phone}`,    
-            CallBackURL: "https://f07c-102-222-146-42.ngrok-free.app/callback",    
+            CallBackURL: "./mpesa_Pay/index.js/callback",    
             AccountReference:`254${phone}`,    
             TransactionDesc:"Test"
          },
