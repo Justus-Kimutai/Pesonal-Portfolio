@@ -27,21 +27,20 @@
 
             const data = { phone: phoneNumber, amount: amount };
 
-            fetch('https://kimutaijustus.xyz/mpesa_pay/stk', {
+            fetch('https://localhost:3300/stk', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
                 // Handle success, show a success message, or redirect the user
             })
             .catch((error) => {
                 console.error('Error:', error);
-                // Handle error, show an error message to the user
+                
             });
         }
     </script>
