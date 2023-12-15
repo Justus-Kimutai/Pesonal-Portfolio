@@ -101,6 +101,6 @@ app.post("/callback", (req,res)=>{
         console.log(callbackData.Body.stkCallback.CallbackMetadata);
         return res.json("ok");
     }
-    console.log(callbackData.Body.stkCallback.CallbackMetadata);
+    alert("Thank you!")
 })
 
