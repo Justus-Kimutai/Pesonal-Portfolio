@@ -21,13 +21,14 @@
     </form>
 
     <script>
+
         function submitForm() {
             const phoneNumber = document.getElementById('phoneNumber').value;
             const amount = document.getElementById('amount').value;
 
             const data = { phone: phoneNumber, amount: amount };
 
-            fetch('https://kimutaijustus.xyz/stk', {
+            fetch('https://kimutaijustus.xyz/mpesa_Pay/stk', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +44,9 @@
                 
             });
         }
+
     </script>
 
 </body>
+
 </html>
