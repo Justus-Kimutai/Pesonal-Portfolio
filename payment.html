@@ -59,7 +59,7 @@
             const paymentsList = document.getElementById('paymentsList');
             data.forEach(payment => {
             const listItem = document.createElement('li');
-            listItem.textContent = `Phone: ${payment.number}, Amount: ${payment.amount}, Transaction ID: ${payment.trnx_id}`;
+            listItem.textContent = `Phone: ${payment.number}, Amount: ${payment.amount}`;
             paymentsList.appendChild(listItem);
             });
         })
