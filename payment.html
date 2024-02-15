@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebenezer Charity Foundation</title>
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+
+<body>
+
+    <h2>STK Push Form</h2>
+
+    <form id="stkForm">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <h2>Payments</h2>
+
+    <ul id="paymentsList"></ul>
+
+    <script>
+
+        function submitForm() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const amount = document.getElementById('amount').value;
+
+            const data = { phone: phoneNumber, amount: amount };
+
+            fetch('https://ebenezer-8t75.onrender.com/stk', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            }).then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                
+                // Handle success, show a success message, or redirect the user
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                
+            });
+        }
+
+            // Fetch data from the server
+        fetch('https://ebenezer-8t75.onrender.com/payments',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            // Display data on the web page
+            const paymentsList = document.getElementById('paymentsList');
+            data.forEach(payment => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Phone: ${payment.number}, Amount: ${payment.amount}`;
+            paymentsList.appendChild(listItem);
+            });
+        })
+      
+
+    </script>
+
+</body>
+
+</html>
