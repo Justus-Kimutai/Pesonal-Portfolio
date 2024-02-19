@@ -9,21 +9,22 @@
 
 <body>
 
-    <h2>STK Push Form</h2>
-
-    <form id="stkForm">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
-
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
-
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
-
-    <h2>Payments</h2>
-
-    <ul id="paymentsList"></ul>
+    <div class="container">
+        <h2>STK Push Form</h2>
+        <form id="stkForm">
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+            </div>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <h2>Payments</h2>
+        <ul id="paymentsList"></ul>
+    </div>
 
     <script>
 

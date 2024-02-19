@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h2{
+    text-align: center;
+}
+form{
+    width: 50%;
+    background: rgb(0, 92, 97);
+    padding: 2em;
+}
+input{
+    margin-bottom: 1.5em;
+}

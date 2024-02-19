@@ -526,8 +526,8 @@ section{
     }
     .portfolio{
         flex-direction: row;
-        justify-content: space-between;
-        gap: 15%;
+        justify-content: space-around;
+        gap: 20px;
         align-items: center;
         justify-content: center;
 
