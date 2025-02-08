@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nehemiah Chapter thirteen</title>
+    <link rel="shortcut icon" href="/images/PersonReading.png" type="image/x-icon">
+    <style>
+            body{
+        background: black;
+        color: rgb(235, 212, 0);
+        font-family:sans-serif ;
+        letter-spacing: 1px;
+        }
+        img{
+            max-width: 100%;
+        }
+        .container{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .text{
+            font-size: 1.5em;
+        }
+        .img{
+            visibility: hidden;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h2 class="header"></h2>
+            <p class="text"></p>
+            <p class="footer"></p>
+        </div>
+    </header>
+    
+    <script >
+        let titleDiv = document.querySelector('.header')
+        let textDiv = document.querySelector('.text')
+        let footerDiv = document.querySelector('.footer')
+
+        const headerText = `Psalms 8vs2: Silencing God's enemy`
+        const bodyText = `vs2 - "You have taught children and nursing infants to give you praise. They silence your enemies who were seeking revenge." This is what I learn in this verse; through our praises we silence the devil, whose agenda is to compete with God by seeking men to worship him. So as worshipers lets embrace worshiping our father intentionaly any time any where.`
+        const footerText = `Have a fruitful day. Shallom.`
+
+
+        timer(headerText, titleDiv, () => {
+            // After header is done, display body
+            timer(bodyText, textDiv, () => {
+                // After body is done, display footer
+                timer(footerText, footerDiv);
+            });
+        });
+
+        
+        function timer(text,container,callback){
+            const arr = text.split("")
+
+            let index = 0
+
+            let timeOut = setInterval(() => {
+            container.textContent += arr[index]
+            index++
+
+                if(index === arr.length){
+                    clearInterval(timeOut)
+                    // Call the callback function if provided
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 100);
+
+        }
+
+    </script>
+</body>
+
+</html> 
